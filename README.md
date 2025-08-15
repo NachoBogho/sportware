@@ -43,6 +43,12 @@ SportWare is a comprehensive management system designed for the efficient handli
    npm run dev
    ```
 
+   Alternatively, a minimal FastAPI server is available for quick testing:
+   ```
+   pip install -r requirements.txt
+   uvicorn server.main:app --reload
+   ```
+
 5. Start the frontend application:
    ```
    cd frontend
