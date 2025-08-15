@@ -1,7 +1,7 @@
 export interface Reservation {
     id: string;
     courtId: string;
-    clientId: string;
+    userId: string;
     startTime: Date;
     endTime: Date;
     date: Date;
@@ -11,7 +11,7 @@ export interface Reservation {
 
 export interface CreateReservationInput {
     courtId: string;
-    clientId: string;
+    userId: string;
     startTime: Date;
     endTime: Date;
     date: Date;
@@ -21,7 +21,7 @@ export interface CreateReservationInput {
 export interface UpdateReservationInput {
     id: string;
     courtId?: string;
-    clientId?: string;
+    userId?: string;
     startTime?: Date;
     endTime?: Date;
     date?: Date;

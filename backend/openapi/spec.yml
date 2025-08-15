@@ -118,7 +118,7 @@ components:
           type: string
         courtId:
           type: string
-        clientId:
+        userId:
           type: string
         startTime:
           type: string

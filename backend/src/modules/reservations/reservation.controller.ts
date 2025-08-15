@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { ReservationService } from './reservation.service';
-import { Reservation } from './reservation.model';
+import { Reservation } from './reservation.types';
 import { validateReservation } from './reservation.validations';
 
 export class ReservationController {

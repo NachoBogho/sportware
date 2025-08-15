@@ -19,7 +19,7 @@ describe('Reservations API', () => {
       .post('/api/reservations')
       .send({
         courtId: 'court123',
-        clientId: 'client123',
+        userId: 'user123',
         startTime: new Date().toISOString(),
         endTime: new Date(new Date().getTime() + 60 * 60 * 1000).toISOString(),
       });
