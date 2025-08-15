@@ -6,11 +6,11 @@ export const createReservationValidation = [
     .withMessage('Court ID is required.')
     .isMongoId()
     .withMessage('Court ID must be a valid MongoDB ObjectId.'),
-  body('customerId')
+  body('clientId')
     .notEmpty()
-    .withMessage('Customer ID is required.')
+    .withMessage('Client ID is required.')
     .isMongoId()
-    .withMessage('Customer ID must be a valid MongoDB ObjectId.'),
+    .withMessage('Client ID must be a valid MongoDB ObjectId.'),
   body('startTime')
     .notEmpty()
     .withMessage('Start time is required.')
@@ -39,10 +39,10 @@ export const updateReservationValidation = [
     .optional()
     .isMongoId()
     .withMessage('Court ID must be a valid MongoDB ObjectId.'),
-  body('customerId')
+  body('clientId')
     .optional()
     .isMongoId()
-    .withMessage('Customer ID must be a valid MongoDB ObjectId.'),
+    .withMessage('Client ID must be a valid MongoDB ObjectId.'),
   body('startTime')
     .optional()
     .isISO8601()
@@ -66,3 +66,35 @@ export const deleteReservationValidation = [
     .isMongoId()
     .withMessage('Reservation ID must be a valid MongoDB ObjectId.'),
 ];
+
+export const validateReservation = (data: {
+  courtId?: string;
+  clientId?: string;
+  startTime?: Date | string;
+  endTime?: Date | string;
+}): string[] => {
+  const errors: string[] = [];
+
+  if (!data.courtId) {
+    errors.push('Court ID is required.');
+  }
+  if (!data.clientId) {
+    errors.push('Client ID is required.');
+  }
+  if (!data.startTime) {
+    errors.push('Start time is required.');
+  }
+  if (!data.endTime) {
+    errors.push('End time is required.');
+  }
+
+  if (data.startTime && data.endTime) {
+    const start = new Date(data.startTime);
+    const end = new Date(data.endTime);
+    if (end <= start) {
+      errors.push('End time must be after start time.');
+    }
+  }
+
+  return errors;
+};
