@@ -71,4 +71,4 @@ Contributions are welcome! Please submit a pull request or open an issue for any
 
 ## Acknowledgments
 
-Thank you to all contributors and libraries that made this project possible.# sportware
+Thank you to all contributors and libraries that made this project possible.
