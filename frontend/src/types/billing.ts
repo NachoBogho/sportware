@@ -1,6 +1,6 @@
 export interface Invoice {
     id: string;
-    clientId: string;
+    userId: string;
     amount: number;
     date: Date;
     status: 'paid' | 'pending' | 'canceled';

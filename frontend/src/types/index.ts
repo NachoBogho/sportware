@@ -3,7 +3,7 @@
 export interface Reservation {
     id: string;
     courtId: string;
-    clientId: string;
+    userId: string;
     startTime: Date;
     endTime: Date;
     status: 'confirmed' | 'canceled' | 'pending';
