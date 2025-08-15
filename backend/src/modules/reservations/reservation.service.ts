@@ -2,7 +2,7 @@ import { Reservation } from './reservation.model';
 import { ReservationData } from './reservation.types';
 import { validateReservation } from './reservation.validations';
 
-class ReservationService {
+export class ReservationService {
     async createReservation(data: ReservationData): Promise<Reservation> {
         const validationErrors = validateReservation(data);
         if (validationErrors.length > 0) {
