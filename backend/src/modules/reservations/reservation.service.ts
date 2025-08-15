@@ -3,7 +3,10 @@ import { CreateReservationInput, UpdateReservationInput } from './reservation.ty
 import { validateReservation } from './reservation.validations';
 
 export class ReservationService {
+    codex/add-exports-to-reservationservice-class
+    async createReservation(data: ReservationData): Promise<Reservation> {
     async create(data: CreateReservationInput) {
+      main
         const validationErrors = validateReservation(data);
         if (validationErrors.length > 0) {
             throw new Error(`Validation errors: ${validationErrors.join(', ')}`);
