@@ -1,19 +1,20 @@
 import { Router } from 'express';
-import { createReservation, getReservations, updateReservation, deleteReservation } from './reservation.controller';
-import { validateReservation } from './reservation.validations';
+import { ReservationController } from './reservation.controller';
+import { createReservationValidation, updateReservationValidation } from './reservation.validations';
 
 const router = Router();
+const controller = new ReservationController();
 
 // Route to create a new reservation
-router.post('/', validateReservation, createReservation);
+router.post('/', createReservationValidation, controller.createReservation.bind(controller));
 
 // Route to get all reservations
-router.get('/', getReservations);
+router.get('/', controller.getReservations.bind(controller));
 
 // Route to update a reservation by ID
-router.put('/:id', validateReservation, updateReservation);
+router.put('/:id', updateReservationValidation, controller.updateReservation.bind(controller));
 
 // Route to delete a reservation by ID
-router.delete('/:id', deleteReservation);
+router.delete('/:id', controller.deleteReservation.bind(controller));
 
 export default router;
