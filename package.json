@@ -1,0 +1,41 @@
+{
+  "name": "sportware",
+  "version": "1.0.0",
+  "description": "A management system for football, tennis, paddle courts, and other sports.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc -p ./frontend/tsconfig.json && tsc -p ./backend/tsconfig.json",
+    "dev": "concurrently \"npm run dev-all\" \"npm run dev-electron\"",
+    "dev-all": "ts-node scripts/dev-all.ts",
+    "postinstall": "ts-node scripts/postinstall.ts",
+    "license:generate": "tsx scripts/license-gen.ts"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "concurrently": "^5.3.0",
+    "electron": "^13.1.7",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3",
+    "ts-node": "^10.4.0",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1",
+    "jest": "^27.2.5",
+    "vite": "^2.6.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/sportware.git"
+  },
+  "keywords": [
+    "sports",
+    "management",
+    "reservations",
+    "electron",
+    "react"
+  ]
+}

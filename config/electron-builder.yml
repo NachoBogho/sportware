@@ -1,0 +1,56 @@
+appId: com.sportware.app
+productName: SportWare
+copyright: 'Copyright © 2025 Your Company'
+directories:
+  output: dist
+files:
+  - '**/*'
+  - '!**/*.map'
+  - '!**/*.ts'
+  - '!**/*.tsx'
+  - '!**/*.test.*'
+  - '!**/*.spec.*'
+  - '!**/node_modules/**/*'
+  - '!**/dist/**/*'
+  - '!**/.git/**/*'
+  - '!**/.env*'
+  - '!**/coverage/**/*'
+  - '!**/logs/**/*'
+  - '!**/tmp/**/*'
+  - '!**/public/**/*'
+  - '!**/docs/**/*'
+extraMetadata:
+  main: 'electron/src/main/main.js'
+  license: 'Your License Information'
+  version: '1.0.0'
+  description: 'A management system for sports courts including football, tennis, and paddle.'
+  homepage: 'https://yourwebsite.com'
+  repository: 'https://github.com/yourusername/sportware'
+  author: 'Your Name <youremail@example.com>'
+  build:
+    appId: com.sportware.app
+    productName: SportWare
+    copyright: 'Copyright © 2025 Your Company'
+    win:
+      target:
+        - target: nsis
+          arch: x64
+    mac:
+      target:
+        - target: dmg
+          arch: x64
+    linux:
+      target:
+        - target: AppImage
+          arch: x64
+    nsis:
+      oneClick: true
+      perMachine: true
+      allowElevation: true
+      installerIcon: 'electron/assets/icons/icon.ico'
+      uninstallerIcon: 'electron/assets/icons/icon.ico'
+      uninstallerDisplayName: 'Uninstall SportWare'
+      shortcutName: 'SportWare'
+      createDesktopShortcut: true
+      createStartMenuShortcut: true
+      shortcutCategory: 'Utilities'

@@ -1,0 +1,18 @@
+# Ignore all node_modules and build directories
+node_modules/
+build/
+dist/
+out/
+coverage/
+*.log
+*.tsbuildinfo
+*.tgz
+*.env
+.DS_Store
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
